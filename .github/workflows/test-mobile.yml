@@ -157,11 +157,7 @@ jobs:
           avd-name: Nexus_6
           emulator-options: -verbose -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           ram-size: 4096M
-          script: |
-            /Users/runner/Library/Android/sdk/platform-tools/adb shell "mkdir -p /data/local/tmp/detox"
-            /Users/runner/Library/Android/sdk/platform-tools/adb push "/Users/runner/work/ledger-live/ledger-live/apps/ledger-live-mobile/android/app/build/outputs/apk/stagingRelease/app-x86_64-stagingRelease.apk" "/data/local/tmp/detox/Application.apk" 
-            /Users/runner/Library/Android/sdk/platform-tools/adb shell pm install -r -g -t /data/local/tmp/detox/Application.apk 
-            pnpm mobile e2e:test -c android.emu.release --loglevel verbose --record-logs failing --record-timeline all --take-screenshots all --record-videos failing
+          script: pnpm mobile e2e:test -c android.emu.release --loglevel verbose --record-logs failing --record-timeline all --take-screenshots all --record-videos failing
       - name: Upload test artifacts
         if: always()
         uses: actions/upload-artifact@v2
