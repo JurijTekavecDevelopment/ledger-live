@@ -27,6 +27,7 @@ import {
 } from "@ledgerhq/live-common/postOnboarding/hooks/index";
 import { clearPostOnboardingLastActionCompleted } from "@ledgerhq/live-common/postOnboarding/actions";
 import { useDispatch } from "react-redux";
+import { Fade } from "@ledgerhq/native-ui/components/transitions";
 import PostOnboardingActionRow from "../../components/PostOnboarding/PostOnboardingActionRow";
 import { NavigatorName } from "../../const";
 
@@ -109,7 +110,7 @@ const PostOnboardingHub: React.FC<StackScreenProps<Props>> = ({
       }, 3000);
     };
     animDoneValue.value = withDelay(
-      3000,
+      2000,
       withTiming(1, { duration: 1500 }, finished => {
         if (finished && !dead) {
           runOnJS(onAnimEnd)();
@@ -187,13 +188,20 @@ const PostOnboardingHub: React.FC<StackScreenProps<Props>> = ({
           ))}
         </ScrollView>
         {!!actionCompletedPopupLabel && popupOpened && (
-          <Notification
-            Icon={Icons.CircledCheckSolidMedium}
-            iconColor="success.c50"
-            variant="plain"
-            title={t(actionCompletedPopupLabel)}
-            onClose={handleClosePopup}
-          />
+          <Fade
+            key={actionCompletedPopupLabel}
+            status="exiting"
+            duration={300}
+            delay={5000}
+          >
+            <Notification
+              Icon={Icons.CircledCheckSolidMedium}
+              iconColor="success.c50"
+              variant="plain"
+              title={t(actionCompletedPopupLabel)}
+              onClose={handleClosePopup}
+            />
+          </Fade>
         )}
         <Flex mt={8}>
           {allDone ? null : (
