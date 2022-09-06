@@ -25,6 +25,21 @@ export const deviceInfo155 = {
   majMin: "1.5",
   targetId: 823132164,
 };
+
+export const deviceInfo202 = {
+  version: "2.0.2",
+  isBootloader: false,
+  isOSU: false,
+  managerAllowed: true,
+  mcuVersion: "2.30",
+  pinValidated: true,
+  providerName: null,
+  majMin: "2.0",
+  targetId: 855638020,
+  seVersion: "2.0.2",
+  seTargetId: 855638020,
+};
+
 const firmware155: FinalFirmware = {
   id: 24,
   name: "1.5.5",
