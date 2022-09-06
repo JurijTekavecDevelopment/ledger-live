@@ -1,13 +1,13 @@
 import { Image, NativeModules, Platform } from "react-native";
 import RNFetchBlob from "rn-fetch-blob";
 import * as ImagePicker from "expo-image-picker";
-import { ImageDimensions, ImageFileUri, ImageUrl } from "./types";
 import {
   ImageDownloadError,
   ImageLoadFromGalleryError,
   ImageMetadataLoadingError,
   ImageTooLargeError,
-} from "./errors";
+} from "@ledgerhq/live-common/customImage/errors";
+import { ImageDimensions, ImageFileUri, ImageUrl } from "./types";
 
 /**
  * Call this to prompt the user to pick an image from its phone.
@@ -42,6 +42,7 @@ export async function importImageFromPhoneGallery(): Promise<ImageFileUri | null
     throw new Error("uri is falsy");
   } catch (e) {
     console.error(e);
+    // throw new ImageLoadFromGalleryError();
     throw new ImageLoadFromGalleryError();
   }
 }

@@ -9,6 +9,7 @@ import {
   Pressable,
 } from "react-native";
 import { StackScreenProps } from "@react-navigation/stack";
+import { ImagePreviewError } from "@ledgerhq/live-common/customImage/errors";
 import useResizedImage, {
   Params as ImageResizerParams,
   ResizeResult,
@@ -23,7 +24,6 @@ import { fitImageContain } from "../../components/CustomImage/imageUtils";
 import BottomButtonsContainer from "../../components/CustomImage/BottomButtonsContainer";
 import ContrastChoice from "../../components/CustomImage/ContrastChoice";
 import { ScreenName } from "../../const";
-import { ImagePreviewError } from "../../components/CustomImage/errors";
 import { ParamList } from "./types";
 
 export const PreviewImage = styled.Image.attrs({
