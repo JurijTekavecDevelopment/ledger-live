@@ -149,7 +149,7 @@ jobs:
         run: pnpm mobile detox clean-framework-cache && pnpm mobile detox build-framework-cache
       - name: Run Android tests
         uses: reactivecircus/android-emulator-runner@v2
-        timeout-minutes: 30
+        timeout-minutes: 15
         with:
           api-level: 28
           arch: x86_64
@@ -157,7 +157,7 @@ jobs:
           avd-name: Nexus_6
           emulator-options: -verbose -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           ram-size: 4096M
-          script: pnpm mobile e2e:test -c android.emu.release
+          script: pnpm mobile e2e:test -c android.emu.release --loglevel verbose --record-logs failing --record-timeline all --take-screenshots all --record-videos failing --detectOpenHandles
       - name: Upload test artifacts
         if: always()
         uses: actions/upload-artifact@v2
