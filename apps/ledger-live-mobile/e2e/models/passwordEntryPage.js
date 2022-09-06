@@ -7,7 +7,7 @@ export default class PasswordEntryPage {
     }
 
     if (device.getPlatform() === "android") {
-      await element(by.type("android.widget.TextView")).typeText(password);
+      await element(by.id("lockscreen-password-input")).typeText(password);
     }
   }
 

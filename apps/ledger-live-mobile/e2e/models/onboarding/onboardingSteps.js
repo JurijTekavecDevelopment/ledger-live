@@ -46,7 +46,7 @@ export default class OnboardingSteps {
 
   static async addDeviceViaBluetooth() {
     bridge.addDevices();
-    await testHelpers.delay(1000); // give time for devices to appear
+    await testHelpers.delay(120000); // give time for devices to appear
     await testHelpers.tapByText("Nano X de David");
 
     bridge.setInstalledApps(); // tell LLM what apps the mock device has

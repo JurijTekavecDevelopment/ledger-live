@@ -163,5 +163,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: test-android-artifacts
-          path: 'ledger-live/ledger-live/apps/ledger-live-mobile/artifacts/'
+          path: '/Users/runner/work/ledger-live/ledger-live/apps/ledger-live-mobile/artifacts/'
           
