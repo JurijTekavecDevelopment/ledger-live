@@ -10,6 +10,7 @@ export type FeatureId =
   | "currencyOsmosis"
   | "currencyOsmosisMobile"
   | "ptxSmartRoutingMobile"
+  | "walletConnectLiveApp"
   | "customImage";
 
 /**  We use objects instead of direct booleans for potential future improvements
