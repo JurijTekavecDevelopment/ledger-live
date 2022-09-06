@@ -3257,7 +3257,7 @@
     "title": "My Ledger",
     "selectDevice": {
       "saved": "Saved ledgers",
-      "addNewCTA": "Add new +",
+      "addNewCTA": "Add new",
       "buyDeviceCTA": "Need a new Ledger? Buy one",
       "item": {
         "usb": "Connected with USB",
