@@ -5,7 +5,6 @@ beforeAll(async () => {
   bridge.init();
   setDemoMode();
   jest.setTimeout(90000);
-  await detox.init();
   await device.launchApp({
     languageAndLocale: {
       language: "en-US",
